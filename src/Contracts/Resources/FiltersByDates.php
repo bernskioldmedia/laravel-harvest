@@ -6,7 +6,6 @@ use Illuminate\Support\Carbon;
 
 trait FiltersByDates
 {
-
     public function from(Carbon $date): static
     {
         $this->query['from'] = $date->toIso8601ZuluString();
@@ -20,5 +19,4 @@ trait FiltersByDates
 
         return $this;
     }
-
 }

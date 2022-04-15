@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Http;
 
 class HarvestClient
 {
-
     protected PendingRequest $request;
 
     public function __construct(
@@ -27,6 +26,7 @@ class HarvestClient
     public static function fromConfig(array $config): static
     {
         $userAgent = $config['application_name'].'<'.$config['application_email'].'>';
+
         return (new static($config['account_id'], $config['api_key'], $userAgent, $config['base_url']));
     }
 
@@ -61,5 +61,4 @@ class HarvestClient
             ->throw()
             ->ok();
     }
-
 }

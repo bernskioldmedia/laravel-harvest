@@ -4,7 +4,6 @@ namespace BernskioldMedia\Harvest\Contracts\Resources;
 
 trait FiltersActive
 {
-
     public function active(bool $active = true): static
     {
         $this->query['is_active'] = $active;
@@ -18,5 +17,4 @@ trait FiltersActive
 
         return $this;
     }
-
 }

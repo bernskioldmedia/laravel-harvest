@@ -4,7 +4,6 @@ namespace BernskioldMedia\Harvest\Contracts\Resources;
 
 trait FiltersBilled
 {
-
     public function onlyBilled(bool $billed = true): static
     {
         $this->query['is_billed'] = $billed;
@@ -18,5 +17,4 @@ trait FiltersBilled
 
         return $this;
     }
-
 }

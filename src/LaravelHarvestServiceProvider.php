@@ -4,7 +4,6 @@ namespace BernskioldMedia\Harvest;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use BernskioldMedia\Harvest\Commands\HarvestCommand;
 
 class LaravelHarvestServiceProvider extends PackageServiceProvider
 {
@@ -17,7 +16,6 @@ class LaravelHarvestServiceProvider extends PackageServiceProvider
 
     public function registeringPackage()
     {
-
         $this->app->bind(HarvestClient::class, function () {
             return HarvestClient::fromConfig(config('harvest'));
         });
@@ -29,6 +27,5 @@ class LaravelHarvestServiceProvider extends PackageServiceProvider
         });
 
         $this->app->alias(LaravelHarvest::class, 'laravel-harvest');
-
     }
 }

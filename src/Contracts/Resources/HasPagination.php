@@ -4,7 +4,6 @@ namespace BernskioldMedia\Harvest\Contracts\Resources;
 
 trait HasPagination
 {
-
     public function page(int $page): static
     {
         $this->query['page'] = $page;
@@ -18,5 +17,4 @@ trait HasPagination
 
         return $this;
     }
-
 }

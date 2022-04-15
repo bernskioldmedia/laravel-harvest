@@ -6,10 +6,9 @@ use Illuminate\Support\Carbon;
 
 trait FiltersUpdatedSince
 {
-
     public function updatedSince(string|Carbon $date): static
     {
-        if (!$date instanceof Carbon) {
+        if (! $date instanceof Carbon) {
             $date = Carbon::make($date);
         }
 
@@ -17,5 +16,4 @@ trait FiltersUpdatedSince
 
         return $this;
     }
-
 }

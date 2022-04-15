@@ -2,9 +2,9 @@
 
 namespace BernskioldMedia\Harvest\Tests;
 
+use BernskioldMedia\Harvest\LaravelHarvestServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use BernskioldMedia\Harvest\LaravelHarvestServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -13,7 +13,8 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn(string $modelName
+            fn (
+                string $modelName
             ) => 'BernskioldMedia\\LaravelHarvest\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
     }

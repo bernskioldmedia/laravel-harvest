@@ -15,5 +15,4 @@ trait Readable
     {
         return $this->client->get($this->getEndpoint().'/'.$id, $this->query);
     }
-
 }

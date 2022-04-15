@@ -6,7 +6,6 @@ use BernskioldMedia\Harvest\Resources\Client;
 
 class LaravelHarvest
 {
-
     public function __construct(
         protected HarvestClient $client,
     ) {
@@ -16,5 +15,4 @@ class LaravelHarvest
     {
         return (new Client($this->client));
     }
-
 }

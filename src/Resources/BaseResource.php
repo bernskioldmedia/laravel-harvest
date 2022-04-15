@@ -19,5 +19,4 @@ abstract class BaseResource
     }
 
     abstract protected function getEndpoint(): string;
-
 }
