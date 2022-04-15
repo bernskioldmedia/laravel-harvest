@@ -4,7 +4,6 @@ namespace BernskioldMedia\Harvest\Contracts\Resources;
 
 trait Readable
 {
-    protected array $query = [];
 
     public function all(): object
     {

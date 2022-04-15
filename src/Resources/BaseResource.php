@@ -11,6 +11,7 @@ abstract class BaseResource
     use FiltersUpdatedSince;
     use HasPagination;
 
+    protected array $query = [];
     protected string $endpoint;
 
     public function __construct(
