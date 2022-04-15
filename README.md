@@ -19,7 +19,7 @@ composer require bernskioldmedia/laravel-harvest
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --tag="laravel-harvest-config"
+php artisan vendor:publish --tag="harvest-config"
 ```
 
 This is the contents of the published config file:
