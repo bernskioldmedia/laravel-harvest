@@ -3,27 +3,23 @@
 namespace BernskioldMedia\Harvest\Resources;
 
 use BernskioldMedia\Harvest\Contracts\Resources\Createable;
-use BernskioldMedia\Harvest\Contracts\Resources\Deleteable;
 use BernskioldMedia\Harvest\Contracts\Resources\Readable;
-use BernskioldMedia\Harvest\Contracts\Resources\RelatesToInvoice;
-use BernskioldMedia\Harvest\Contracts\Resources\Updateable;
+use BernskioldMedia\Harvest\Contracts\Resources\RelatesToUser;
 use BernskioldMedia\Harvest\Exceptions\InvalidParameters;
 
-class InvoiceMessages extends BaseResource
+class UserBillableRate extends BaseResource
 {
     use Readable;
     use Createable;
-    use Updateable;
-    use Deleteable;
 
-    use RelatesToInvoice;
+    use RelatesToUser;
 
     protected function getEndpoint(): string
     {
-        if ($this->invoiceId === 0) {
+        if ($this->userId === 0) {
             throw InvalidParameters::relatedModelNotSpecified();
         }
 
-        return "invoices/$this->invoiceId/messages";
+        return "users/$this->userId/billable_rates";
     }
 }
