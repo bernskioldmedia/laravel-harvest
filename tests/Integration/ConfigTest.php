@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\Http;
 use stdClass;
 
 it('can build request from config values', function () {
-
     Http::fake([
         '*' => Http::response(json_encode(new stdClass())),
     ]);
