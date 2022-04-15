@@ -13,13 +13,13 @@ beforeEach(function () {
 
 it('can build active filtering', function () {
     expect($this->harvest->clients()->active()->query)->toEqual([
-        'is_active' => true,
+        'is_active' => 'true',
     ]);
 });
 
 it('can build inactive filtering', function () {
     expect($this->harvest->clients()->inactive()->query)->toEqual([
-        'is_active' => false,
+        'is_active' => 'false',
     ]);
 });
 
