@@ -8,7 +8,7 @@ class Company extends BaseResource
 {
     use Updateable;
 
-    protected array $query = [];
+    public array $query = [];
 
     public function get(): object
     {
