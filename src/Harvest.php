@@ -28,10 +28,10 @@ use BernskioldMedia\Harvest\Resources\UserBillableRate;
 use BernskioldMedia\Harvest\Resources\UserCostRate;
 use BernskioldMedia\Harvest\Resources\UserProjectAssignment;
 
-class LaravelHarvest
+class Harvest
 {
     public function __construct(
-        protected HarvestClient $client,
+        public HarvestClient $client,
     ) {
     }
 

@@ -57,7 +57,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static TimeReport timeReport()
  * @method static UninvoicedReport uninvoicedReport()
  *
- * @see \BernskioldMedia\Harvest\LaravelHarvest
+ * @see \BernskioldMedia\Harvest\Harvest
  */
 class Harvest extends Facade
 {

@@ -4,7 +4,7 @@ namespace BernskioldMedia\Harvest\Contracts\Resources;
 
 trait Deleteable
 {
-    public function delete(int|string $id): object
+    public function delete(int|string $id): bool
     {
         return $this->client->delete($this->getEndpoint()."/$id");
     }

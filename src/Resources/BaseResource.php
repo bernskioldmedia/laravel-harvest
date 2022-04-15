@@ -11,11 +11,11 @@ abstract class BaseResource
     use FiltersUpdatedSince;
     use HasPagination;
 
-    protected array $query = [];
+    public array $query = [];
     protected string $endpoint;
 
     public function __construct(
-        protected HarvestClient $client
+        public HarvestClient $client
     ) {
     }
 

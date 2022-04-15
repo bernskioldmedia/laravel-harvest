@@ -56,7 +56,7 @@
     "extra": {
         "laravel": {
             "providers": [
-			  "LaravelHarvestServiceProvider"
+                "HarvestServiceProvider"
             ],
             "aliases": {
                 "Harvest": "BernskioldMedia\\Harvest\\Facades\\Harvest"

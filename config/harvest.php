@@ -1,26 +1,26 @@
 <?php
-// config for BernskioldMedia/LaravelHarvest
+// config for BernskioldMedia/Harvest
 return [
 
     /**
-     * The API key used for authenticating with the LaravelHarvest API.
+     * The API key used for authenticating with the Harvest API.
      */
     'api_key' => env('HARVEST_API_KEY', ''),
 
     /**
-     * The Account ID number from LaravelHarvest that you want to use.
+     * The Account ID number from Harvest that you want to use.
      */
     'account_id' => env('HARVEST_ACCOUNT_ID', ''),
 
     /**
      * The user agent (application name) is sent through to
-     * LaravelHarvest so that they can identify who requests come from.
+     * Harvest so that they can identify who requests come from.
      */
     'application_name' => env('HARVEST_APP_NAME', env('APP_NAME')),
 
     /**
      * The contact e-mail address for the application is required
-     * so that LaravelHarvest can get in touch for any reason.
+     * so that Harvest can get in touch for any reason.
      */
     'application_email' => env('HARVEST_APP_EMAIL', ''),
 

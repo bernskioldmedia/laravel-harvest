@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Http;
 
 class HarvestClient
 {
-    protected PendingRequest $request;
+    public PendingRequest $request;
 
     public function __construct(
         private string $accountId,
@@ -17,7 +17,7 @@ class HarvestClient
     ) {
         $this->request = Http::withToken($this->accessToken)
             ->withHeaders([
-                'Harvest-Account-Id' => $this->accountId,
+                'Harvest-Account-ID' => $this->accountId,
             ])
             ->withUserAgent($this->userAgent)
             ->baseUrl($this->baseUrl);
@@ -25,7 +25,7 @@ class HarvestClient
 
     public static function fromConfig(array $config): static
     {
-        $userAgent = $config['application_name'].'<'.$config['application_email'].'>';
+        $userAgent = $config['application_name'].' <'.$config['application_email'].'>';
 
         return (new static($config['account_id'], $config['api_key'], $userAgent, $config['base_url']));
     }
