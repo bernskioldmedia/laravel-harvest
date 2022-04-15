@@ -12,7 +12,7 @@ class HarvestServiceProvider extends PackageServiceProvider
     {
         $package
             ->name('laravel-harvest')
-            ->hasConfigFile('harvest');
+            ->hasConfigFile();
     }
 
     public function registeringPackage()
