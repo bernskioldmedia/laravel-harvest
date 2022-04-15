@@ -3,16 +3,28 @@
 namespace BernskioldMedia\Harvest\Tests\Unit;
 
 use BernskioldMedia\Harvest\Facades\Harvest;
+use Illuminate\Http\Client\Request;
+use Illuminate\Support\Facades\Http;
+use stdClass;
 
 it('can build request from config values', function () {
+
+    Http::fake([
+        '*' => Http::response(json_encode(new stdClass())),
+    ]);
+
     $this->app['config']->set('harvest.account_id', '123');
     $this->app['config']->set('harvest.api_key', 'token');
     $this->app['config']->set('harvest.application_name', 'My App');
     $this->app['config']->set('harvest.application_email', 'info@example.com');
 
-    $request = Harvest::contacts()->client->request;
+    Harvest::clients()->all();
 
-    expect($request->getOptions()['headers']['Harvest-Account-ID'])->toBe('123');
-    expect($request->getOptions()['headers']['Authorization'])->toBe('Bearer token');
-    expect($request->getOptions()['headers']['User-Agent'])->toBe('My App <info@example.com>');
+    Http::assertSent(function (Request $request) {
+        return $request->hasHeaders([
+            'Harvest-Account-ID' => '123',
+            'Authorization' => 'Bearer token',
+            'User-Agent' => 'My App <info@example.com>',
+        ]);
+    });
 });
