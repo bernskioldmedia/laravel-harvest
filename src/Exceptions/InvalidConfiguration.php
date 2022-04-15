@@ -6,7 +6,6 @@ use Exception;
 
 class InvalidConfiguration extends Exception
 {
-
     public static function noApiKey(): static
     {
         return new static('No Harvest API key set. You must set HARVEST_API_KEY for the Harvest API to work.');
@@ -31,5 +30,4 @@ class InvalidConfiguration extends Exception
     {
         return new static('The Harvest base url was empty. Please make sure that HARVEST_API_URL is a valid and non-empty URL string.');
     }
-
 }

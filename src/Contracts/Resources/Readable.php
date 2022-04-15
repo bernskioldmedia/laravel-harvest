@@ -4,7 +4,6 @@ namespace BernskioldMedia\Harvest\Contracts\Resources;
 
 trait Readable
 {
-
     public function all(): object
     {
         return $this->client->get($this->getEndpoint(), $this->query);

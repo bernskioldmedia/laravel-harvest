@@ -23,7 +23,7 @@ class HarvestServiceProvider extends PackageServiceProvider
 
         $this->app->bind(Harvest::class, function () {
             $this->protectAgainstInvalidConfiguration(config('harvest'));
-            
+
             $client = app(HarvestClient::class);
 
             return new Harvest($client);

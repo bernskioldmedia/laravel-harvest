@@ -16,4 +16,3 @@ it('can build request from config values', function () {
     expect($request->getOptions()['headers']['Authorization'])->toBe('Bearer token');
     expect($request->getOptions()['headers']['User-Agent'])->toBe('My App <info@example.com>');
 });
-
