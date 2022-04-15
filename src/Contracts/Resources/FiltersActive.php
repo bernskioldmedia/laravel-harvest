@@ -6,14 +6,14 @@ trait FiltersActive
 {
     public function active(bool $active = true): static
     {
-        $this->query['is_active'] = $active;
+        $this->query['is_active'] = $active ? 'true' : 'false';
 
         return $this;
     }
 
     public function inactive(): static
     {
-        $this->query['is_active'] = false;
+        $this->query['is_active'] = 'false';
 
         return $this;
     }
