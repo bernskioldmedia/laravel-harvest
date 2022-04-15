@@ -64,9 +64,35 @@ The package provides a convenient facade to interact with all resources. The pac
 through fluent methods, but will not touch or map the response coming from the API. Please see the [Harvest API docs](#)
 for more information on responses.
 
+The package currently supports all Harvest API resources, as well as their reporting endpoints. Your IDE should discover
+them on the Harvest Facade when typing.
+
+When getting lists using the `all` method there are also fluent filtering methods to help you filter. Additionally some
+resources have "actions" as well. The names of these functions match mostly to the parameters in the Harvest API docs.
+
 ```php
+use BernskioldMedia\Harvest\Facades\Harvest;
+
 // Get all clients from Harvest.
-\BernskioldMedia\Harvest\Facades\Harvest::clients()->all();
+Harvest::clients()->all();
+
+// Show only active clients from Harvest.
+Harvest::clients()->active()->all();
+
+// Get a single client from Harvest.
+Harvest::clients()->get(123);
+
+// Create a client from Harvest.
+Harvest::clients()->create(['name' => 'My new client']);
+
+// Update a client in Harvest.
+Harvest::clients()->update(123, ['name' => 'My new name']);
+
+// Delete a client from Harvest.
+Harvest::clients()->delete(123);
+
+// Mark an invoice as sent.
+Harvest::invoices()->send(1);
 ```
 
 ## Testing
