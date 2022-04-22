@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\Http;
 
 class HarvestClient extends ApiClient
 {
-
     public function __construct(
         private string $accountId,
         private string $accessToken,

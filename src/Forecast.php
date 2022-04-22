@@ -33,5 +33,4 @@ class Forecast
     {
         return new Milestone($this->client);
     }
-
 }
