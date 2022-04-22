@@ -11,6 +11,6 @@ class Project extends BaseResource
 
     protected function getEndpoint(): string
     {
-        return 'people';
+        return 'projects';
     }
 }
