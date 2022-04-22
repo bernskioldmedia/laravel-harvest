@@ -6,7 +6,6 @@ use BernskioldMedia\Harvest\Resources\BaseResource;
 
 class User extends BaseResource
 {
-
     public function me(): object
     {
         return $this->client->get('whoami');
