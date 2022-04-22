@@ -8,5 +8,4 @@ class Forecast
         public ForecastClient $client,
     ) {
     }
-
 }

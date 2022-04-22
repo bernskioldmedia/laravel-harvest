@@ -7,7 +7,6 @@ use Carbon\Carbon;
 
 class Assignments extends BaseResource
 {
-
     public function between(Carbon $startDate, Carbon $endDate): object
     {
         return $this->client->get($this->getEndpoint(), [
