@@ -30,4 +30,23 @@ return [
      */
     'base_url' => env('HARVEST_API_URL', 'https://api.harvestapp.com/v2'),
 
+    /**
+     * We support the undocumented API from Forecast
+     * which is a "companion" app to Harvest.
+     */
+    'forecast' => [
+
+        /**
+         * The Account ID number from Forecast that you want to use.
+         */
+        'account_id' => env('FORECAST_ACCOUNT_ID', ''),
+
+        /**
+         * The Base URL for the Harvest API including the version.
+         * This package currently only supports V2 of the API.
+         */
+        'base_url' => env('FORECAST_API_URL', 'https://api.forecastapp.com'),
+
+    ],
+
 ];

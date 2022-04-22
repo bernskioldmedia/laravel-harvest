@@ -17,6 +17,14 @@ class ForecastClient extends ApiClient
                 'Forecast-Account-ID' => $this->accountId,
             ])
             ->withUserAgent($this->userAgent)
-            ->baseUrl('https://api.forecastapp.com');
+            ->baseUrl($this->baseUrl);
+    }
+
+    public static function fromConfig(array $config): static
+    {
+        $userAgent = $config['application_name'].' <'.$config['application_email'].'>';
+
+        return (new static($config['forecast']['account_id'], $config['api_key'], $userAgent,
+            $config['forecast']['base_url']));
     }
 }

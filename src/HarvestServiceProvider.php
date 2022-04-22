@@ -21,6 +21,10 @@ class HarvestServiceProvider extends PackageServiceProvider
             return HarvestClient::fromConfig(config('harvest'));
         });
 
+        $this->app->bind(ForecastClient::class, function () {
+            return ForecastClient::fromConfig(config('harvest'));
+        });
+
         $this->app->bind(Harvest::class, function () {
             $this->protectAgainstInvalidConfiguration(config('harvest'));
 
@@ -29,7 +33,16 @@ class HarvestServiceProvider extends PackageServiceProvider
             return new Harvest($client);
         });
 
+        $this->app->bind(Forecast::class, function () {
+            $this->protectAgainstInvalidConfiguration(config('harvest'));
+
+            $client = app(ForecastClient::class);
+
+            return new Forecast($client);
+        });
+
         $this->app->alias(Harvest::class, 'laravel-harvest');
+        $this->app->alias(Forecast::class, 'laravel-forecast');
     }
 
     protected function protectAgainstInvalidConfiguration(array $config): void

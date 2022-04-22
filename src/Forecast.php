@@ -6,6 +6,9 @@ use BernskioldMedia\Harvest\Resources\Forecast\Account;
 use BernskioldMedia\Harvest\Resources\Forecast\Assignment;
 use BernskioldMedia\Harvest\Resources\Forecast\Client;
 use BernskioldMedia\Harvest\Resources\Forecast\Milestone;
+use BernskioldMedia\Harvest\Resources\Forecast\Person;
+use BernskioldMedia\Harvest\Resources\Forecast\Project;
+use BernskioldMedia\Harvest\Resources\Forecast\User;
 
 class Forecast
 {
@@ -32,5 +35,20 @@ class Forecast
     public function milestones(): Milestone
     {
         return new Milestone($this->client);
+    }
+
+    public function people(): Person
+    {
+        return new Person($this->client);
+    }
+
+    public function projects(): Project
+    {
+        return new Project($this->client);
+    }
+
+    public function users(): User
+    {
+        return new User($this->client);
     }
 }
