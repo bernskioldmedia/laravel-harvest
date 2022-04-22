@@ -2,9 +2,9 @@
 
 namespace BernskioldMedia\Harvest\Resources;
 
+use BernskioldMedia\Harvest\ApiClient;
 use BernskioldMedia\Harvest\Contracts\Resources\FiltersUpdatedSince;
 use BernskioldMedia\Harvest\Contracts\Resources\HasPagination;
-use BernskioldMedia\Harvest\HarvestClient;
 
 abstract class BaseResource
 {
@@ -15,7 +15,7 @@ abstract class BaseResource
     protected string $endpoint;
 
     public function __construct(
-        public HarvestClient $client
+        public ApiClient $client
     ) {
     }
 

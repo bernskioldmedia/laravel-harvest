@@ -5,7 +5,7 @@ namespace BernskioldMedia\Harvest\Resources\Forecast;
 use BernskioldMedia\Harvest\Resources\BaseResource;
 use Carbon\Carbon;
 
-class Milestones extends BaseResource
+class Milestone extends BaseResource
 {
     public function between(Carbon $startDate, Carbon $endDate): object
     {

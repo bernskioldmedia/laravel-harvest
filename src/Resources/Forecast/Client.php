@@ -4,7 +4,7 @@ namespace BernskioldMedia\Harvest\Resources\Forecast;
 
 use BernskioldMedia\Harvest\Resources\BaseResource;
 
-class Clients extends BaseResource
+class Client extends BaseResource
 {
     public function all(): object
     {
