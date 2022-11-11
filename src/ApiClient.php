@@ -8,14 +8,6 @@ class ApiClient
 {
     public PendingRequest $request;
 
-    public function __construct(
-        private string $accountId,
-        private string $accessToken,
-        private string $userAgent,
-        private string $baseUrl
-    ) {
-    }
-
     public static function fromConfig(array $config): static
     {
         $userAgent = $config['application_name'].' <'.$config['application_email'].'>';
